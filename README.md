@@ -9,4 +9,4 @@
 
 <br>Pretty basic configs, nothing too fancy nor professional.
 
-![My Arch screenshot](/arch.png)
+<br>![My Arch screenshot](/arch.png)
