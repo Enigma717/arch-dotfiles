@@ -3,6 +3,7 @@
 - ***i3***
 - ***i3status***
 - ***gtk-3.0***
+- ***LightDM***
 - ***picom***
 - ***xinitrc***
 - ***Xresources***
