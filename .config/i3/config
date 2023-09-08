@@ -30,9 +30,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -66,7 +63,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+default_border none
+default_floating_border normal
+floating_modifier $mod
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -159,6 +159,7 @@ bindsym $mod+Control+6 exec urxvt -name ranger-instance -e ranger
 # Assign applications to its workspaces
 assign [class="Google-chrome"] $ws1
 assign [class="code-oss"] $ws2
+assign [class="Arduino IDE"] $ws2
 assign [class="URxvt" instance="urxvt-instance1"] $ws3
 assign [class="URxvt" instance="urxvt-instance2"] $ws4
 assign [class="URxvt" instance="urxvt-instance3"] $ws5
@@ -177,6 +178,14 @@ exec --no-startup-id feh --bg-scale ~/backgrounds/wallpaper.jpg
 
 # Picom
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# Imwheel
+exec --no-startup-id imwheel -b 45
+
+# VBoxClient extensions
+exec VBoxClient --clipboard
+exec VBoxClient --draganddrop
+
 
 #----------[ Binds ]----------
 
